@@ -12,7 +12,7 @@ class Blog extends Component {
         errTxt:false
     }
     componentDidMount(){
-        axios.get('https://jsonplaceholder.typicode.com/postss')
+        axios.get('/posts')
         .then(resp =>{
             const posts = resp.data.slice(0,6);
             const updatePost = posts.map(post =>{
