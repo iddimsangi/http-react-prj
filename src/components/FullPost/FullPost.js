@@ -18,6 +18,12 @@ componentDidUpdate(){
     }
     
 }
+deleteHandler = () =>{
+    axios.delete('https://jsonplaceholder.typicode.com/posts/'+this.props.id)
+    .then(resp =>{
+        console.log(resp);
+    })
+}
     render () {
         let post = <p style={{textAlign:'center'}}>Please select a Post!</p>;
         if(this.props.id){
@@ -29,7 +35,9 @@ componentDidUpdate(){
                     <h1>{this.state.loadedData.title}</h1>
                     <p>{this.state.loadedData.body}</p>
                     <div className="Edit">
-                        <button className="Delete">Delete</button>
+                        <button 
+                        onClick={this.deleteHandler}
+                        className="Delete">Delete</button>
                     </div>
                 </div>
             );
