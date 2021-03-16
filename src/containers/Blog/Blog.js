@@ -8,33 +8,33 @@ import { Layout, Menu } from 'antd';
 const { Header } = Layout;
 
 class Blog extends Component {
-    state ={
-        posts:[],
-        selectedPostId:null,
-        errTxt:false
-    }
-    componentDidMount(){
-        axios.get('/posts')
-        .then(resp =>{
-            const posts = resp.data.slice(0,6);
-            const updatePost = posts.map(post =>{
-                return{
-                    ...post,
-                    Author:'iddiMsangi'
-                }
-            })
-            // console.log(resp)
-            this.setState({
-                posts:updatePost
-            })
-        })
-        .catch(err =>{
-            // console.log(err);
-            this.setState({
-                errTxt:true
-            })
-        });
-    }
+    // state ={
+    //     posts:[],
+    //     selectedPostId:null,
+    //     errTxt:false
+    // }
+    // componentDidMount(){
+    //     axios.get('/posts')
+    //     .then(resp =>{
+    //         const posts = resp.data.slice(0,6);
+    //         const updatePost = posts.map(post =>{
+    //             return{
+    //                 ...post,
+    //                 Author:'iddiMsangi'
+    //             }
+    //         })
+    //         // console.log(resp)
+    //         this.setState({
+    //             posts:updatePost
+    //         })
+    //     })
+    //     .catch(err =>{
+    //         // console.log(err);
+    //         this.setState({
+    //             errTxt:true
+    //         })
+    //     });
+    // }
    postSelected = (id) =>{
         this.setState({
             selectedPostId:id
@@ -42,17 +42,17 @@ class Blog extends Component {
         console.log(id);
     }
     render () {
-        let posts = <p style={{textAlign:'center'}}>SOMETHING WENT WRONGG........!!</p>
-        if(!this.state.errTxt){
-            posts = this.state.posts.map((post) =>{
-                return <Post 
-                title ={post.title} 
-                Author ={post.Author}
-                key={post.id}
-                clicked ={() => this.postSelected(post.id)}
-                 />
-            });
-        }
+        // let posts = <p style={{textAlign:'center'}}>SOMETHING WENT WRONGG........!!</p>
+        // if(!this.state.errTxt){
+        //     posts = this.state.posts.map((post) =>{
+        //         return <Post 
+        //         title ={post.title} 
+        //         Author ={post.Author}
+        //         key={post.id}
+        //         clicked ={() => this.postSelected(post.id)}
+        //          />
+        //     });
+        // }
        
      
         return (
@@ -65,12 +65,12 @@ class Blog extends Component {
                     <Menu.Item key="3">nav 3</Menu.Item>
                 </Menu>
                </Header>
-                <section className="Posts">
+                {/* <section className="Posts">
                     {/* <Post />
                     <Post />
-                    <Post /> */}
+                    <Post /> *}
                     {posts}
-                </section>
+                </section> */}
                 <section>
                     <FullPost 
                     id={this.state.selectedPostId}
