@@ -5,7 +5,6 @@ import FullPost from '../../components/FullPost/FullPost';
 import NewPost from '../../components/NewPost/NewPost';
 import './Blog.css';
 import { Layout, Menu } from 'antd';
-
 const { Header } = Layout;
 
 class Blog extends Component {
@@ -58,7 +57,7 @@ class Blog extends Component {
      
         return (
             <div>
-                <Header>
+                 <Header>
                     <div className="logo" />
                     <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
                     <Menu.Item key="1">nav 1</Menu.Item>
